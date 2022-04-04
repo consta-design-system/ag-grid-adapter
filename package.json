@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "@bem-react/classname": "^1.5.8",
+    "ag-grid-community": "^27.1.0",
     "ag-grid-react": "^27.1.0"
   },
   "resolutions": {
