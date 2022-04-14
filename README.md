@@ -1,6 +1,6 @@
 # [Дизайн-система Consta](http://consta.gazprom-neft.ru/)
 
-Этот адаптер стилизует диаграмму Ганта [ag-grid-react](https://www.ag-grid.com/react-data-grid/getting-started/) для [дизайн-системы Consta](https://consta.gazprom-neft.ru/).
+Этот адаптер стилизует таблицу [ag-grid-react](https://www.ag-grid.com/react-data-grid/getting-started/) для [дизайн-системы Consta](https://consta.gazprom-neft.ru/).
 
 # Как использовать
 
@@ -24,35 +24,50 @@ $ yarn add @consta/ag-grid-adapter
 
 ```js
 import React from 'react'
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme'
+import { agGridAdapter } from '@consta/ag-grid-adapter/agGridAdapter'
+import { AgGridReact } from 'ag-grid-react'
 
-
-const data: Task[] = [
-  {
-    start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-    end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 15),
-    name: 'Some Project',
-    id: 'ProjectSample',
-    progress: 25,
-    type: 'project',
-
-    hideChildren: false,
-  },
-  {
-    start: new Date(currentDate.getFullYear(), currentDate.getMonth(), 1),
-    end: new Date(currentDate.getFullYear(), currentDate.getMonth(), 2, 12, 28),
-    name: 'Idea',
-    id: 'Task 0',
-    progress: 45,
-    type: 'task',
-    project: 'ProjectSample',
-  },
-  ...
+const columnDefs = [
+  { field: 'athlete', filter: 'agTextColumnFilter', minWidth: 200 },
+  { field: 'age' },
+  { field: 'country', minWidth: 180 },
+  { field: 'year' },
+  { field: 'date', minWidth: 150 },
+  { field: 'gold' },
+  { field: 'silver' },
+  { field: 'bronze' },
+  { field: 'total' },
 ]
 
-const App = () => {
+const defaultColDef = {
+  flex: 1,
+  minWidth: 100,
+  enableValue: true,
+  enableRowGroup: true,
+  enablePivot: true,
+  sortable: true,
+  filter: true,
+  resizable: true,
+}
 
-  return < />
+const App = () => {
+   const styleOptions = agGridAdapter({
+    size: 'm',
+    borderBetweenColumns: true,
+    borderBetweenRows: true,
+    headerVerticalAlign: 'center',
+    headerView: 'default',
+    verticalAlign: 'center',
+  })
+
+  return  (
+    <AgGridReact
+      {...styleOptions}
+      rowData={[...]}
+      columnDefs={columnDefs}
+      defaultColDef={defaultColDef}
+    />
+  )
 }
 ```
 
