@@ -1,0 +1,7 @@
+*.ts
+*.tsx
+*.js
+*.jsx
+*.md
+*.mdx
+AgGridAdapterGrid.css
