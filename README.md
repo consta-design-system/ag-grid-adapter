@@ -1,6 +1,6 @@
-# [Дизайн-система Consta](http://consta.gazprom-neft.ru/)
+# [Дизайн-система Consta](https://consta.design/)
 
-Этот адаптер стилизует таблицу [ag-grid-react](https://www.ag-grid.com/react-data-grid/getting-started/) для [дизайн-системы Consta](https://consta.gazprom-neft.ru/).
+Этот адаптер стилизует таблицу [ag-grid-react](https://www.ag-grid.com/react-data-grid/getting-started/) для [дизайн-системы Consta](https://consta.design/).
 
 # Как использовать
 
@@ -16,7 +16,7 @@ $ yarn add @consta/ag-grid-adapter
 
 ## Подключите зависимости
 
-Чтобы начать работу, установите библиотеку [`@consta/uikit`](https://www.npmjs.com/package/@consta/uikit) и [настройте тему](https://consta-uikit.vercel.app/?path=/docs/components-theme--playground).
+Чтобы начать работу, установите библиотеку [`@consta/uikit`](https://www.npmjs.com/package/@consta/uikit) и [настройте тему](http://uikit.consta.design/?path=/docs/components-theme--playground).
 
 ### Можно использовать компоненты
 
@@ -107,12 +107,12 @@ $ yarn test
 
 ## Документация
 
-[Посмотреть документацию и примеры](https://consta-tree.vercel.app/)
+[Посмотреть документацию и примеры](http://ag-grid-adapter.consta.design/)
 
 ## Контрибьюторам
 
-Будем рады, если вы захотите принять участие в разработке дизайн-системы =) Но сначала прочитайте [инструкцию для контрибьюторов](https://consta-uikit.vercel.app/?path=/docs/common-develop-contributors--page).
+Будем рады, если вы захотите принять участие в разработке дизайн-системы =) Но сначала прочитайте [инструкцию для контрибьюторов](http://uikit.consta.design/?path=/docs/common-develop-contributors--page).
 
 ## Лицензия
 
-Дизайн-систему можно использовать бесплатно, она распространяется ПАО «Газпром нефть» на условиях открытой [лицензии MIT](https://consta.gazprom-neft.ru/static/licence_mit.pdf).
+Дизайн-систему можно использовать бесплатно, она распространяется ПАО «Газпром нефть» на условиях открытой [лицензии MIT](https://consta.design/static/licence_mit.pdf).
