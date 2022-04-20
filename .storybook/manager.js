@@ -42,8 +42,7 @@ export const theme = create({
   inputBorder: colors['--color-control-bg-border-default'],
   inputTextColor: colors['--color-control-typo-default'],
   inputBorderRadius: 4,
-  brandTitle: 'Consta Table storybook',
-  brandUrl: 'https://consta-table.vercel.app',
+  brandTitle: 'Consta AgGrid Adapter',
   brandImage: logo,
 })
 

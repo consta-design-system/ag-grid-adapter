@@ -7,7 +7,12 @@ import { AgGridAdapterProps } from './helper'
 
 const cnAgGridAdapter = cn('AgGridAdapter')
 
-export const agGridAdapter = (props?: AgGridAdapterProps) => {
+const mapHeightBySize = {
+  m: 40,
+  s: 32,
+} as const
+
+export const agGridAdapter = (props: AgGridAdapterProps = {}) => {
   const {
     className,
     size = 'm',
@@ -25,15 +30,15 @@ export const agGridAdapter = (props?: AgGridAdapterProps) => {
     floatingFiltersHeight,
     headerHeight,
     cellClass,
-  } = props || ({} as AgGridAdapterProps)
+  } = props
 
   return {
-    rowHeight: rowHeight ?? size === 'm' ? 40 : 32,
-    headerHeight: headerHeight ?? size === 'm' ? 40 : 32,
-    groupHeaderHeight: groupHeaderHeight ?? size === 'm' ? 40 : 32,
-    floatingFiltersHeight: floatingFiltersHeight ?? size === 'm' ? 40 : 32,
-    pivotHeaderHeight: pivotHeaderHeight ?? size === 'm' ? 40 : 32,
-    pivotGroupHeaderHeight: pivotGroupHeaderHeight ?? size === 'm' ? 40 : 32,
+    rowHeight: rowHeight ?? mapHeightBySize[size],
+    headerHeight: headerHeight ?? mapHeightBySize[size],
+    groupHeaderHeight: groupHeaderHeight ?? mapHeightBySize[size],
+    floatingFiltersHeight: floatingFiltersHeight ?? mapHeightBySize[size],
+    pivotHeaderHeight: pivotHeaderHeight ?? mapHeightBySize[size],
+    pivotGroupHeaderHeight: pivotGroupHeaderHeight ?? mapHeightBySize[size],
     rowClass: cnAgGridAdapter('Row', [rowClass]),
     cellClass: cnAgGridAdapter('Cell', [cellClass]),
     className: cnAgGridAdapter(
@@ -46,7 +51,7 @@ export const agGridAdapter = (props?: AgGridAdapterProps) => {
         headerVerticalAlign,
         headerView,
       },
-      [className, 'ag-theme-alpine']
+      [className]
     ),
   }
 }
