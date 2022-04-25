@@ -1,0 +1,71 @@
+.HeaderCell {
+  --header-cell-margin: var(--space-xs);
+  --header-align: 'row';
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: var(--header-align);
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  gap: var(--header-cell-margin);
+
+  &_align {
+    &_left {
+      --header-align: row;
+    }
+
+    &_right {
+      --header-align: row-reverse;
+    }
+  }
+
+  &_size {
+    &_s {
+      --header-cell-margin: calc(var(--space-xs) - var(--space-3xs));
+    }
+
+    &_m {
+      --header-cell-margin: var(--space-xs);
+    }
+  }
+
+  &-Container {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    align-self: stretch;
+    flex: 1 1 auto;
+    flex-direction: var(--header-align);
+    gap: var(--header-cell-margin);
+
+    & .Text {
+      overflow: hidden;
+
+      max-width: calc(100% - var(--space-m));
+
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-SortButton,
+  &-Menu,
+  &-GroupButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: var(--space-m);
+    max-width: var(--space-m);
+    min-height: var(--space-m);
+    max-height: var(--space-m);
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    border: none;
+    background: transparent;
+  }
+}
