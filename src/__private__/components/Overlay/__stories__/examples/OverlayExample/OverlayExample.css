@@ -1,0 +1,15 @@
+.OverlayExample {
+  overflow: hidden;
+
+  &-Container {
+    height: 100%;
+  }
+
+  &-Buttons {
+    margin-bottom: var(--space-m);
+
+    & > *:not(:last-child) {
+      margin-right: var(--space-m);
+    }
+  }
+}

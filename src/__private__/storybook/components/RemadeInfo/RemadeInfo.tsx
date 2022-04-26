@@ -23,10 +23,10 @@ export const RemadeInfo: React.FC<{ apiUrl: string; commponentName: string }> = 
           className={cnRemadeInfo('Link')}
           as="a"
           view="link"
-          href="https://g2plot.antv.vision/en"
+          href="https://www.ag-grid.com/react-data-grid/getting-started/"
           target="_blank"
         >
-          G2Plot
+          ag-grid-react
         </Text>
         , к нему добавили тематизацию из{' '}
         <Text
@@ -37,13 +37,13 @@ export const RemadeInfo: React.FC<{ apiUrl: string; commponentName: string }> = 
           target="_blank"
         >
           дизайн-системы Consta
-        </Text>{' '}
-        и полностью проксировали API.
+        </Text>
+        .
       </Text>
       <Text style={{ marginTop: 'var(--space-m)' }}>
         Здесь описаны только основные свойства, подробности — в{' '}
         <Text className={cnRemadeInfo('Link')} as="a" view="link" href={apiUrl} target="_blank">
-          документации G2Plot
+          документации ag-grid
         </Text>
         .
       </Text>

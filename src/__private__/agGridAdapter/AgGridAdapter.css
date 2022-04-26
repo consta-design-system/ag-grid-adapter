@@ -101,7 +101,7 @@
       border-right: 1px solid var(--color-bg-border);
     }
 
-    & .ag-row-position-absolute > * {
+    & .ag-row-position-absolute:not(.ag-row-loading) > * {
       border-right: 1px solid var(--color-bg-border);
     }
   }
@@ -182,6 +182,10 @@
     border: 2px solid var(--color-control-bg-active);
   }
 
+  & .ag-row-focus.ag-row-focus {
+    outline: none;
+  }
+
   & .ag-header-group-cell {
     &-label {
       font-size: var(--ag-cell-font-size);
@@ -197,9 +201,15 @@
     font-weight: var(--font-weight-text-regular);
     line-height: var(--ag-cell-line-height);
 
+    overflow: hidden;
     align-items: var(--ag-cell-vertical-align);
 
     color: var(--color-typo-primary);
+
+    & .ag-drag-handle {
+      display: flex;
+      align-items: center;
+    }
   }
 
   & .ag-cell-wrapper {
@@ -234,7 +244,7 @@
   }
 
   & .ag-cell.ag-cell-inline-editing.ag-cell-value {
-    & input {
+    & input:not([class^='TextField-']) {
       font-family: var(--font-primary);
       font-size: var(--ag-input-font-size);
       line-height: var(--line-height-text-m);

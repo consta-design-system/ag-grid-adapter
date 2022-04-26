@@ -19,6 +19,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/ban-types': ['off'],
+    'react-hooks/exhaustive-deps': 'off',
     '@typescript-eslint/tslint/config': [
       'error',
       {
