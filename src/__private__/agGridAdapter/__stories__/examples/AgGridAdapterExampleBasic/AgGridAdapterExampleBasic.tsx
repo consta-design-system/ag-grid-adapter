@@ -3,12 +3,16 @@ import { AgGridReact } from 'ag-grid-react'
 import { agGridAdapter } from '@/__private__/agGridAdapter/AgGridAdapter'
 
 const rowData = [
-  { пользователь: 'Крокодил Гена', роль: 'администратор', приоритет: '1' },
-  { пользователь: 'Чебурашка', роль: 'читатель', приоритет: '2' },
-  { пользователь: 'Шапокляк', роль: 'вредитель', приоритет: '777' },
+  { user: 'Крокодил Гена', role: 'администратор', priority: '1' },
+  { user: 'Чебурашка', role: 'читатель', priority: '2' },
+  { user: 'Шапокляк', role: 'вредитель', приорpriorityитет: '777' },
 ]
 
-const columnDefs = [{ field: 'пользователь' }, { field: 'роль' }, { field: 'приоритет' }]
+const columnDefs = [
+  { field: 'user', headerName: 'Пользователь' },
+  { field: 'role', headerName: 'Роль' },
+  { field: 'priority', headerName: 'Приоритет' },
+]
 
 export const AgGridAdapterExampleBasic = () => {
   const styleOptions = agGridAdapter({
