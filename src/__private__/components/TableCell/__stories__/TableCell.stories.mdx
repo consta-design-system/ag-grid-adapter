@@ -18,7 +18,20 @@ import { TableCellExample } from './examples/TableCellExample/TableCellExample'
 import { TableCell } from '@consta/ag-grid-adapter/TableCell'
 ```
 
-Компонент ячейки таблицы
+Этот компонент кастомизирует ячейку таблицы. С его помощью можно поменять размер текста, выравнивание, добавить в ячейку иконку из [библиотеки иконок](https://uikit.consta.design/?path=/story/components-icons--playground) или что-то ещё.
+
+## Свойства
+
+<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-cell-renderer/" />
+
+| Параметры   | Тип                         | По умолчанию | Описание                       |
+| ----------- | --------------------------- | ------------ | ------------------------------ |
+| `size?`     | `'s', 'm'`                  | `'m'`        | Размер                         |
+| `align?`    | `'left', 'right', 'center'` | `'left'`     | Выравнивание контента в ячейке |
+| `children?` | `React.ReactElement`        | -            | Дополнительный контент         |
+| `icon?`     | `React.FC<IconProps>`       | -            | Иконка                         |
+
+## Пример
 
 ```tsx
 export const TableCellExample = () => {
@@ -69,14 +82,3 @@ export const TableCellExample = () => {
 ```
 
 <TableCellExample />
-
-## Свойства
-
-<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-cell-renderer/" />
-
-| Параметры   | Тип                         | По умолчанию | Описание               |
-| ----------- | --------------------------- | ------------ | ---------------------- |
-| `size?`     | `'s', 'm'`                  | `m`          | Размер                 |
-| `align?`    | `'left', 'right', 'center'` | `left`       | Положение контента     |
-| `children?` | `React.ReactElement`        | -            | Дополнительный контент |
-| `icon?`     | `React.FC<IconProps>`       | -            | Иконка                 |

@@ -18,7 +18,17 @@ import { TooltipExample } from './examples/TooltipExample/TooltipExample'
 import { Tooltip } from '@consta/ag-grid-adapter/Tooltip'
 ```
 
-Обертка для компонента наложения, в которой вы можете отразить необходимую информацию.
+Обёртка для тултипа. Тултип привязывается к колонке и всплывает при наведении на неё. В тултипе можно показать любую дополнительную информацию.
+
+## Свойства
+
+<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-tooltip/" />
+
+| Параметры   | Тип                                            | По умолчанию | Описание        |
+| ----------- | ---------------------------------------------- | ------------ | --------------- |
+| `children?` | `(data: ITooltipParams) => React.ReactElement` | -            | Контент тултипа |
+
+## Пример
 
 ```tsx
 const TooltipExample = () => {
@@ -84,11 +94,3 @@ const TooltipExample = () => {
 ```
 
 <TooltipExample />
-
-## Свойства
-
-<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-tooltip/" />
-
-| Параметры   | Тип                                            | По умолчанию | Описание        |
-| ----------- | ---------------------------------------------- | ------------ | --------------- |
-| `children?` | `(data: ITooltipParams) => React.ReactElement` | -            | Контент тултипа |

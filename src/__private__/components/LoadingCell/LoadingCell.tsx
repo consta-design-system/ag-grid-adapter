@@ -14,7 +14,7 @@ type Props = ILoadingCellRendererParams & {
 const cnLoadingCell = cn('LoadingCell')
 
 export const LoadingCell = (props: Props) => {
-  const { size = 'm', message = 'Идет загрузка, пожалуйста подождите ...' } = props
+  const { size = 'm', message = 'Таблица загружается, подождите, пожалуйста...' } = props
   return (
     <div className={cnLoadingCell()}>
       <ProgressSpin size={size} />

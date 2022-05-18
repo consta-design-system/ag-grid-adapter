@@ -10,15 +10,11 @@ import './RemadeInfo.css'
 const cnRemadeInfo = cn('RemadeInfo')
 
 export const RemadeInfo: React.FC<{ apiUrl: string; commponentName: string }> = props => {
-  const { commponentName, apiUrl } = props
+  const { apiUrl } = props
   return (
     <Informer className={cnRemadeInfo()} status="system" view="bordered">
       <Text>
-        Это компонент{' '}
-        <Text as="span" weight="bold">
-          {commponentName}
-        </Text>{' '}
-        из библиотеки{' '}
+        Это компонент из библиотеки{' '}
         <Text
           className={cnRemadeInfo('Link')}
           as="a"

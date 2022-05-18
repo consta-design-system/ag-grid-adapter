@@ -18,7 +18,18 @@ import { HeaderCellExample } from './examples/HeaderCellExample/HeaderCellExampl
 import { HeaderCell } from '@consta/ag-grid-adapter/HeaderCell'
 ```
 
-Компонент ячейки заголовка
+С помощью этого компонента можно отдельно от всей таблицы управлять размерами и выравниванием текста в заголовке. Применяется к заголовку определённого столбца.
+
+## Свойства
+
+<RemadeInfoTable apiUrl="https://www.ag-grid.com/react-data-grid/component-header/" />
+
+| Параметры | Тип                         | По умолчанию | Описание           |
+| --------- | --------------------------- | ------------ | ------------------ |
+| `size?`   | `'s', 'm'`                  | `m`          | Размер             |
+| `align?`  | `'left', 'right', 'center'` | `left`       | Положение контента |
+
+## Пример
 
 ```tsx
 const HeaderCellExample = () => {
@@ -87,12 +98,3 @@ const HeaderCellExample = () => {
 ```
 
 <HeaderCellExample />
-
-## Свойства
-
-<RemadeInfoTable apiUrl="https://www.ag-grid.com/react-data-grid/component-header/" />
-
-| Параметры | Тип                         | По умолчанию | Описание           |
-| --------- | --------------------------- | ------------ | ------------------ |
-| `size?`   | `'s', 'm'`                  | `m`          | Размер             |
-| `align?`  | `'left', 'right', 'center'` | `left`       | Положение контента |
