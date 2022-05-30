@@ -18,7 +18,8 @@ import { TableEditorNumberExample } from './examples/TableEditorNumberExample/Ta
 import { TableEditorNumber } from '@consta/ag-grid-adapter/TableEditorNumber'
 ```
 
-Компонент редактора для изменения численных значений в ячейке таблицы. Позволяет менять размер редактора без использования адаптера.
+Компонент редактора для изменения численных значений в ячейке таблицы. Позволяет менять размер редактора без использования адаптера, а также указывать необходимые свойства компонента
+[TextField](https://uikit.consta.design/?path=/story/components-textfield--playground).
 
 ## Свойства
 
@@ -79,6 +80,9 @@ const TableEditorNumberExample = () => {
         columnDefs={columnDefs}
         rowData={rowData}
         defaultColDef={{
+          cellEditorParams: {
+            leftSide: IconSettings,
+          },
           editable: true,
           sortable: true,
           flex: 1,

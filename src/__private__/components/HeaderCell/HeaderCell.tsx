@@ -5,16 +5,16 @@ import { IconDown } from '@consta/uikit/IconDown'
 import { IconArrowLeft } from '@consta/uikit/IconArrowLeft'
 import { IconArrowRight } from '@consta/uikit/IconArrowRight'
 import { IconHamburger } from '@consta/uikit/IconHamburger'
-import { Text } from '@consta/uikit/Text'
+import { Text, TextProps } from '@consta/uikit/Text'
 import { cn } from '@/__private__/utils/bem'
 import { useFlag } from '@consta/uikit/useFlag'
 
 import './HeaderCell.css'
 
 type Props = IHeaderParams &
-  IHeaderGroupParams & {
+  IHeaderGroupParams &
+  Omit<TextProps, 'size' | 'lineHeight'> & {
     size?: 's' | 'm'
-    align?: 'left' | 'right'
   }
 
 type SortType = null | 'asc' | 'desc'
@@ -38,6 +38,9 @@ export const HeaderCell = (props: Props) => {
     align = 'left',
     columnGroup,
     displayName,
+    weight = 'semibold',
+    view = 'secondary',
+    ...otherProps
   } = props
 
   const [sortType, setSortType] = useState<SortType>(null)
@@ -125,7 +128,7 @@ export const HeaderCell = (props: Props) => {
   return (
     <div className={cnHeaderCell({ size, align })}>
       <div className={cnHeaderCell('Container')}>
-        <Text weight="semibold" view="secondary" size={textSizeMap[size]} lineHeight="s">
+        <Text {...otherProps} weight={weight} view={view} size={textSizeMap[size]} lineHeight="s">
           {displayName}
         </Text>
         {enableSorting && renderSorting()}

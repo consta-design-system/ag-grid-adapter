@@ -2,6 +2,7 @@ import React from 'react'
 import { TableEditorText } from '../../../TableEditorText'
 import { AgGridReact } from 'ag-grid-react'
 import { agGridAdapter } from '@/agGridAdapter'
+import { IconUser } from '@consta/uikit/IconUser'
 
 export const TableEditorTextExample = () => {
   const rowData = [
@@ -49,6 +50,9 @@ export const TableEditorTextExample = () => {
         columnDefs={columnDefs}
         rowData={rowData}
         defaultColDef={{
+          cellEditorParams: {
+            leftSide: IconUser,
+          },
           editable: true,
           sortable: true,
           flex: 1,

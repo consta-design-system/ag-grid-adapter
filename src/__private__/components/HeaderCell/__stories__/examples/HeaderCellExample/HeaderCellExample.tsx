@@ -38,6 +38,8 @@ export const HeaderCellExample = () => {
     filter: true,
     resizable: true,
     headerComponentParams: {
+      transform: 'uppercase',
+      view: 'brand',
       align: 'right',
     },
   }

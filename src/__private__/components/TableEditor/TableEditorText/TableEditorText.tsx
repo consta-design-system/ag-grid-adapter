@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState, useImperativeHandle, memo, forwardRef } from 'react'
 import { cn } from '@/__private__/utils/bem'
 import { ICellEditorParams } from 'ag-grid-community'
-import { TextField } from '@consta/uikit/TextField'
+import { TextField, TextFieldProps } from '@consta/uikit/TextField'
 import { useFlag } from '@consta/uikit/useFlag'
 
 import './TableEditorText.css'
 const cnTableEditorText = cn('TableEditorText')
 
-type Props = ICellEditorParams & {
-  size?: 's' | 'm'
-}
+type Props = ICellEditorParams &
+  TextFieldProps<'text' | 'textarea'> & {
+    size?: 's' | 'm'
+  }
 
 const sizeMap = {
   m: 's',
@@ -18,7 +19,16 @@ const sizeMap = {
 
 export const TableEditorText = memo(
   forwardRef((props: Props, ref) => {
-    const { size = 'm', eventKey, value: valueProp, charPress } = props
+    const {
+      size = 'm',
+      eventKey,
+      value: valueProp,
+      key,
+      charPress,
+      onKeyDown: onKeyDownProp,
+      className,
+      ...otherProps
+    } = props
     const createInitialState = () => {
       let startValue
       let highlightAllOnFocus = true
@@ -68,6 +78,7 @@ export const TableEditorText = memo(
       if (event.key === 'Enter' || event.key === 'Tab') {
         props.stopEditing()
       }
+      onKeyDownProp?.(event)
     }
 
     useImperativeHandle(ref, () => {
@@ -84,12 +95,13 @@ export const TableEditorText = memo(
 
     return (
       <TextField
-        className={cnTableEditorText()}
+        className={cnTableEditorText(null, [className])}
         inputRef={inputRef}
         value={value}
         size={sizeMap[size]}
         onKeyDown={onKeyDown}
         onChange={val => setValue(val.value)}
+        {...otherProps}
       />
     )
   })

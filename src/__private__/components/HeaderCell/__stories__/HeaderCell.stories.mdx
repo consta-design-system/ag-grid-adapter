@@ -18,7 +18,9 @@ import { HeaderCellExample } from './examples/HeaderCellExample/HeaderCellExampl
 import { HeaderCell } from '@consta/ag-grid-adapter/HeaderCell'
 ```
 
-С помощью этого компонента можно отдельно от всей таблицы управлять размерами и выравниванием текста в заголовке. Применяется к заголовку определённого столбца.
+С помощью этого компонента можно отдельно от всей таблицы управлять размерами и выравниванием текста в заголовке, а также указывать необходимые свойства компонента
+[Text](https://uikit.consta.design/?path=/story/components-text--playground).
+Применяется к заголовку определённого столбца.
 
 ## Свойства
 
@@ -67,6 +69,8 @@ const HeaderCellExample = () => {
     filter: true,
     resizable: true,
     headerComponentParams: {
+      transform: 'uppercase',
+      view: 'brand',
       align: 'right',
     },
   }
