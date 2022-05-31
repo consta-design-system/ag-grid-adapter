@@ -27,6 +27,10 @@ export const TableCellExample = () => {
     minWidth: 100,
     filter: true,
     resizable: true,
+    cellRendererParams: {
+      view: 'warning',
+      weight: 'bold',
+    },
   }
 
   const styleOptions = agGridAdapter()

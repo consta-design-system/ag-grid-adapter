@@ -18,7 +18,18 @@ import { TableEditorTextExample } from './examples/TableEditorTextExample/TableE
 import { TableEditorNumber } from '@consta/ag-grid-adapter/TableEditorText'
 ```
 
-Компонент ячейки для изменения строковых значений
+Компонент редактора для изменения строковых значений в ячейке таблицы. Позволяет менять размер редактора без использования адаптера, а также указывать необходимые свойства компонента
+[TextField](https://uikit.consta.design/?path=/story/components-textfield--playground).
+
+## Свойства
+
+<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-cell-editor/" />
+
+| Параметры | Тип        | По умолчанию | Описание |
+| --------- | ---------- | ------------ | -------- |
+| `size?`   | `'s', 'm'` | `m`          | Размер   |
+
+## Пример
 
 ```tsx
 const TableEditorTextExample = () => {
@@ -67,6 +78,9 @@ const TableEditorTextExample = () => {
         columnDefs={columnDefs}
         rowData={rowData}
         defaultColDef={{
+          cellEditorParams: {
+            leftSide: IconUser,
+          },
           editable: true,
           sortable: true,
           flex: 1,
@@ -80,11 +94,3 @@ const TableEditorTextExample = () => {
 ```
 
 <TableEditorTextExample />
-
-## Свойства
-
-<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-cell-editor/" />
-
-| Параметры | Тип        | По умолчанию | Описание |
-| --------- | ---------- | ------------ | -------- |
-| `size?`   | `'s', 'm'` | `m`          | Размер   |
