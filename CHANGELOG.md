@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.1.1 (29/06/2022)
+Самое важное:
+- Доработали документацию и примеры использования
+- Исправлены стили для блока пагинации
+
+---
+
+- [fix(Pagination): fix styles for pagination ](https://github.com/consta-design-system/ag-grid-adapter/commit/f3cc0df082847a808fe7a4d8812937e3d4caf3f8) - [@N1MBER](https://github.com/N1MBER)
+- [chore(stand): add automation publish stand](https://github.com/consta-design-system/ag-grid-adapter/commit/c18dde4796280867b1d52f084832d40d161344e3) - [@gizeasy](https://github.com/gizeasy)
+- [docs(Components): edit components docs and examples (#8)](https://github.com/consta-design-system/ag-grid-adapter/commit/dbb5ba4248ff80df58f89122061f779278f14dca) - [@arhayka](https://github.com/arhayka)
+
+--------------------
+
 ## v0.1.0 (26/04/2022)
 Самое важное:
 - Добавлены кастомные компоненты
