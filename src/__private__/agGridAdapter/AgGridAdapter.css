@@ -11,6 +11,7 @@
   --ag-cell-padding: var(--space-m);
   --ag-row-odd: transparent;
   --ag-row-even: transparent;
+  --ag-sidebar-font-size: var(--size-text-xs);
 
   /**
     =======================
@@ -83,6 +84,7 @@
       --ag-cell-line-height: var(--line-height-text-s);
       --ag-switch-height: var(--space-l);
       --ag-switch-width: calc(var(--space-2xl) + var(--space-2xs));
+      --ag-sidebar-font-size: var(--size-text-s);
     }
 
     &_s {
@@ -97,6 +99,7 @@
       --ag-cell-line-height: var(--line-height-text-m);
       --ag-switch-height: var(--space-m);
       --ag-switch-width: calc(var(--space-xl) + var(--space-2xs));
+      --ag-sidebar-font-size: var(--size-text-xs);
     }
   }
 
@@ -982,6 +985,12 @@
         background: var(--color-control-bg-clear-hover);
       }
     }
+  }
+
+  & .ag-input-field-label,
+  & .ag-column-select-column-label,
+  & .ag-filter-toolpanel-group-title {
+    font-size: var(--ag-sidebar-font-size);
   }
 
   & .ag-checkbox {
