@@ -19,6 +19,8 @@ const defaultKnobs = () => ({
   headerView: select('headerView', ['default', 'clear'], 'default'),
   headerVerticalAlign: select('headerVerticalAlign', ['center', 'bottom'], 'center'),
   verticalAlign: select('verticalAlign', ['top', 'center', 'bottom'], 'center'),
+  withPaginatiion: boolean('withPaginatiion', false),
+  withSidebar: boolean('withSidebar', true),
 })
 
 const cnAgGridAdapterStories = cn('AgGridAdapterStories')
@@ -32,6 +34,8 @@ export const Playground = () => {
     headerVerticalAlign,
     verticalAlign,
     headerView,
+    withPaginatiion,
+    withSidebar,
   } = defaultKnobs()
   const gridRef = useRef(null)
   const [rowData, setRowData] = useState()
@@ -58,9 +62,10 @@ export const Playground = () => {
         {...styleOptions}
         rowData={rowData}
         ref={gridRef}
+        pagination={withPaginatiion}
         columnDefs={columnDefs}
         defaultColDef={defaultColDef}
-        sideBar={true}
+        sideBar={withSidebar}
       />
     </div>
   )
