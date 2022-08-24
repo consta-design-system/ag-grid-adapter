@@ -1,0 +1,104 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import {
+  RemadeInfo,
+  RemadeTableInfo,
+} from '@/__private__/storybook/components/RemadeInfo/RemadeInfo';
+import { HeaderCellExample } from './examples/HeaderCellExample/HeaderCellExample';
+
+<Meta title="Компоненты/HeaderCell" id="HeaderCell" />
+
+# HeaderCell
+
+<RemadeInfo
+  commponentName="HeaderCell"
+  apiUrl="https://www.ag-grid.com/react-data-grid/component-header/"
+/>
+
+```tsx
+import { HeaderCell } from '@consta/ag-grid-adapter/HeaderCell';
+```
+
+С помощью этого компонента можно отдельно от всей таблицы управлять размерами и выравниванием текста в заголовке, а также указывать необходимые свойства компонента
+[Text](https://uikit.consta.design/?path=/story/components-text--playground).
+Применяется к заголовку определённого столбца.
+
+## Свойства
+
+<RemadeInfoTable apiUrl="https://www.ag-grid.com/react-data-grid/component-header/" />
+
+| Параметры | Тип                         | По умолчанию | Описание           |
+| --------- | --------------------------- | ------------ | ------------------ |
+| `size?`   | `'s', 'm'`                  | `m`          | Размер             |
+| `align?`  | `'left', 'right', 'center'` | `left`       | Положение контента |
+
+## Пример
+
+```tsx
+const HeaderCellExample = () => {
+  const gridStyle = useMemo(() => ({ height: '300px', width: '100%' }), []);
+  const [rowData, setRowData] = useState();
+
+  const columnDefs = [
+    { field: 'athlete', suppressMenu: true, minWidth: 120 },
+    {
+      field: 'age',
+      sortable: false,
+      headerComponentParams: { menuIcon: 'fa-external-link-alt' },
+    },
+    { field: 'country', suppressMenu: true, minWidth: 120 },
+    { field: 'year', sortable: false },
+    { field: 'date', suppressMenu: true },
+    { field: 'sport', sortable: false },
+    {
+      field: 'gold',
+      headerComponentParams: { menuIcon: 'fa-cog' },
+      minWidth: 120,
+    },
+    { field: 'silver', sortable: false },
+    { field: 'bronze', suppressMenu: true, minWidth: 120 },
+    { field: 'total', sortable: false },
+  ];
+
+  const styleOptions = agGridAdapter();
+
+  const defaultColDef = {
+    editable: true,
+    sortable: true,
+    flex: 1,
+    minWidth: 100,
+    filter: true,
+    resizable: true,
+    headerComponentParams: {
+      transform: 'uppercase',
+      view: 'brand',
+      align: 'right',
+    },
+  };
+
+  const onGridReady = useCallback(() => {
+    fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
+      .then((resp) => resp.json())
+      .then((data) => {
+        setRowData(data);
+      });
+  }, []);
+
+  return (
+    <div style={gridStyle}>
+      <AgGridReact
+        {...styleOptions}
+        rowData={rowData}
+        columnDefs={columnDefs}
+        suppressMenuHide={true}
+        components={{
+          agColumnHeader: HeaderCell,
+        }}
+        defaultColDef={defaultColDef}
+        onGridReady={onGridReady}
+      />
+    </div>
+  );
+};
+```
+
+<HeaderCellExample />

@@ -1,0 +1,159 @@
+import {
+  RemadeInfo,
+  RemadeTableInfo,
+} from '@/__private__/storybook/components/RemadeInfo/RemadeInfo';
+import { AgGridAdapterExample } from './examples/AgGridAdapterExample/AgGridAdapterExample';
+import { AgGridAdapterExampleBasic } from './examples/AgGridAdapterExampleBasic/AgGridAdapterExampleBasic';
+
+# agGridAdapter
+
+```tsx
+import { agGridAdapter } from '@consta/ag-grid-adapter/agGridAdapter';
+```
+
+Этот адаптер стилизует таблицу [ag-grid-react](https://www.ag-grid.com/react-data-grid/getting-started/) для [дизайн-системы Consta](https://consta.design/).
+
+- [C чего начать](#)
+- [Список свойств](#свойства)
+  - [Свойства таблицы](#свойства-таблицы)
+  - [Свойства agGridAdapter](#свойства-aggridadapter)
+- [Пример использования](#пример)
+
+## С чего начать
+
+Перечислите столбцы в объекте `columnDefs`, значения для каждого столбца, по строкам — в объекте `rowData` и подключите стилизацию `agGridAdapter`.
+
+```tsx
+import React from 'react';
+import { AgGridReact } from 'ag-grid-react';
+import { agGridAdapter } from '@/__private__/agGridAdapter/AgGridAdapter';
+
+const rowData = [
+  { user: 'Крокодил Гена', role: 'администратор', priority: '1' },
+  { user: 'Чебурашка', role: 'читатель', priority: '2' },
+  { user: 'Шапокляк', role: 'вредитель', приорpriorityитет: '777' },
+];
+
+const columnDefs = [
+  { field: 'user', headerName: 'Пользователь' },
+  { field: 'role', headerName: 'Роль' },
+  { field: 'priority', headerName: 'Приоритет' },
+];
+
+export const AgGridAdapterExampleBasic = () => {
+  const styleOptions = agGridAdapter({
+    size: 'm',
+    borderBetweenColumns: true,
+    borderBetweenRows: true,
+    headerVerticalAlign: 'center',
+    headerView: 'default',
+    verticalAlign: 'center',
+  });
+
+  return (
+    <div style={{ width: 600, height: 200 }}>
+      <AgGridReact
+        {...styleOptions}
+        rowData={rowData}
+        columnDefs={columnDefs}
+      />
+    </div>
+  );
+};
+```
+
+<AgGridAdapterExampleBasic />
+
+## Свойства
+
+### Свойства таблицы
+
+<RemadeTableInfo url="https://www.ag-grid.com/react-data-grid/getting-started/" />
+
+| Параметры        | Тип      | По умолчанию | Описание                   |
+| ---------------- | -------- | ------------ | -------------------------- |
+| `rowData`        | `object` | -            | Объект с данными для строк |
+| `columnDefs`     | `object` | -            | Столбцы                    |
+| `defaultColDef?` | `object` | -            | Параметры для колонок      |
+
+### Свойства agGridAdapter
+
+| Параметры                 | Тип                         | По умолчанию | Описание                                             |
+| ------------------------- | --------------------------- | ------------ | ---------------------------------------------------- |
+| `size?`                   | `'s', 'm'`                  | `m`          | Размер таблицы                                       |
+| `zebraStriped?`           | `'odd', 'even'`             | -            | Окрашивание строк через одну                         |
+| `headerView?`             | `'default', 'clear'`        | `default`    | Внешний вид заголовка таблицы                        |
+| `borderBetweenColumns?`   | `boolean`                   | `true`       | Отображение границ между строками                    |
+| `borderBetweenRows?`      | `boolean`                   | `true`       | Отображение границ между колонками                   |
+| `verticalAlign?`          | `'center', 'top', 'bottom'` | `center`     | Выравнивание по вертикали                            |
+| `headerVerticalAlign?`    | `'center', 'bottom'`        | `center`     | Выравнивание заголовков по вертикали                 |
+| `className?`              | `string`                    | -            | Класс для контейнера таблицы                         |
+| `rowHeight?`              | `number`                    | -            | Высота строки                                        |
+| `headerHeight?`           | `number`                    | -            | Высота строки заголовка                              |
+| `groupHeaderHeight?`      | `number`                    | -            | Высота строки с группой в заголовке                  |
+| `floatingFiltersHeight?`  | `number`                    | -            | Высота строки с фильтрами                            |
+| `pivotHeaderHeight?`      | `number`                    | -            | Высота строки заголовка при `pivot=true`             |
+| `pivotGroupHeaderHeight?` | `number`                    | -            | Высота строки с группой в заголовке при `pivot=true` |
+| `rowClass?`               | `string`                    | -            | Класс для строки                                     |
+| `cellClass?`              | `string`                    | -            | Класс для ячейки таблицы                             |
+
+## Пример
+
+```tsx
+import React, { useState, useEffect } from 'react';
+import { agGridAdapter } from '@consta/ag-grid-adapter/agGridAdapter';
+import { AgGridReact } from 'ag-grid-react';
+
+const columnDefs = [
+  { field: 'athlete', filter: 'agTextColumnFilter', minWidth: 200 },
+  { field: 'age' },
+  { field: 'country', minWidth: 180 },
+  { field: 'year' },
+  { field: 'date', minWidth: 150 },
+  { field: 'gold' },
+  { field: 'silver' },
+  { field: 'bronze' },
+  { field: 'total' },
+];
+
+const defaultColDef = {
+  flex: 1,
+  minWidth: 100,
+  enableValue: true,
+  enableRowGroup: true,
+  enablePivot: true,
+  sortable: true,
+  filter: true,
+};
+
+export const AgGridAdapterExample = () => {
+  const [rows, setRows] = useState();
+  const styleOptions = agGridAdapter({
+    size: 'm',
+    borderBetweenColumns: true,
+    borderBetweenRows: true,
+    headerVerticalAlign: 'center',
+    headerView: 'default',
+    verticalAlign: 'center',
+  });
+
+  useEffect(() => {
+    fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
+      .then((resp) => resp.json())
+      .then((data) => setRows(data));
+  }, []);
+
+  return (
+    <div style={{ width: 800, height: 400 }}>
+      <AgGridReact
+        {...styleOptions}
+        rowData={rows}
+        columnDefs={columnDefs}
+        defaultColDef={defaultColDef}
+      />
+    </div>
+  );
+};
+```
+
+<AgGridAdapterExample />

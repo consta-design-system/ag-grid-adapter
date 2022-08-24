@@ -1,0 +1,24 @@
+.TableCell {
+  display: inline-flex;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+
+  &_align {
+    &_left {
+      justify-content: flex-start;
+    }
+
+    &_center {
+      justify-content: center;
+    }
+
+    &_right {
+      justify-content: flex-end;
+    }
+  }
+
+  & > *:not(:last-child) {
+    margin-right: var(--space-xs);
+  }
+}
