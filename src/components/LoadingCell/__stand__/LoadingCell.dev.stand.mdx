@@ -1,22 +1,13 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import {
-  RemadeInfo,
-  RemadeTableInfo,
-} from '@/__private__/storybook/components/RemadeInfo/RemadeInfo';
+import { MdxMenu } from '@consta/stand';
+import { RemadeTableInfo } from '../../../stand/components/RemadeInfo';
 import { LoadingCellExample } from './examples/LoadingCellExample/LoadingCellExample';
 
-<Meta title="Компоненты/LoadingCell" id="LoadingCell" />
+<MdxMenu>
 
-# LoadingCell
+- [Свойства](#свойства)
+- [Пример](#пример)
 
-<RemadeInfo
-  commponentName="LoadingCell"
-  apiUrl="https://www.ag-grid.com/react-data-grid/component-loading-cell-renderer/"
-/>
-
-```tsx
-import { LoadingCell } from '@consta/ag-grid-adapter/LoadingCell';
-```
+</MdxMenu>
 
 Компонент `LoadingCell` формирует дополнительную строку с сообщением. Эта строка появляется при прокрутке таблицы и видна, пока загружаются следующие строчки.
 

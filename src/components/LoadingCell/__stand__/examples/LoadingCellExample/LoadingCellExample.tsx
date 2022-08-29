@@ -1,39 +1,11 @@
-import { Meta } from '@storybook/addon-docs/blocks';
-import {
-  RemadeInfo,
-  RemadeTableInfo,
-} from '@/__private__/storybook/components/RemadeInfo/RemadeInfo';
-import { LoadingCellExample } from './examples/LoadingCellExample/LoadingCellExample';
+import 'ag-grid-enterprise';
 
-<Meta title="Компоненты/LoadingCell" id="LoadingCell" />
+import { AgGridReact } from 'ag-grid-react';
+import React, { useCallback } from 'react';
 
-# LoadingCell
+import { agGridAdapter } from '##/adapters/agGridAdapter';
+import { LoadingCell } from '##/components/LoadingCell';
 
-<RemadeInfo
-  commponentName="LoadingCell"
-  apiUrl="https://www.ag-grid.com/react-data-grid/component-loading-cell-renderer/"
-/>
-
-```tsx
-import { LoadingCell } from '@consta/ag-grid-adapter/LoadingCell';
-```
-
-Компонент `LoadingCell` формирует дополнительную строку с сообщением. Эта строка появляется при прокрутке таблицы и видна, пока загружаются следующие строчки.
-
-Зачем это нужно: представьте, что пользователь так быстро прокручивает таблицу до конца, что строки не успевают загружаться. В этот момент можно подсказать пользователю, что это ещё не конец: нужно немного подождать, и информация загрузится.
-
-## Свойства
-
-<RemadeTableInfo apiUrl="https://www.ag-grid.com/react-data-grid/component-loading-cell-renderer/" />
-
-| Параметры  | Тип        | По умолчанию                                    | Описание        |
-| ---------- | ---------- | ----------------------------------------------- | --------------- |
-| `size?`    | `'s', 'm'` | `m`                                             | Размер          |
-| `message?` | `string`   | `Таблица загружается, подождите, пожалуйста...` | Текст сообщения |
-
-## Пример
-
-```tsx
 type Params = {
   success: (data: {
     rowData: Array<Record<string, unknown>>;
@@ -110,7 +82,7 @@ export const LoadingCellExample = () => {
     resizable: true,
   };
 
-  const onGridReady = useCallback((params) => {
+  const onGridReady = useCallback((params: any) => {
     fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
       .then((resp) => resp.json())
       .then((data: Array<Record<string, unknown>>) => {
@@ -133,18 +105,13 @@ export const LoadingCellExample = () => {
         columnDefs={columnDefs}
         defaultColDef={defaultColDef}
         loadingCellRenderer={LoadingCell}
-        rowModelType={'serverSide'}
-        serverSideStoreType={'partial'}
+        rowModelType="serverSide"
+        serverSideStoreType="partial"
         cacheBlockSize={100}
         maxBlocksInCache={10}
-        animateRows={true}
+        animateRows
         onGridReady={onGridReady}
       />
     </div>
   );
 };
-```
-
-Чтобы увидеть строку с сообщением о загрузке, прокрутите таблицу вниз, до конца, и немного подождите.
-
-<LoadingCellExample />
