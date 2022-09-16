@@ -4,7 +4,7 @@ export default createStand({
   title: 'agGridAdapter',
   id: 'agGridAdapter',
   group: 'adapters',
-  description: 'Этот адаптер стилизует таблицу.',
+  description: 'Адаптер для таблицы ag-grid-react.',
   version: '0.1.1',
   sandbox: 'aggridadapter-4bufgz',
   figma:
