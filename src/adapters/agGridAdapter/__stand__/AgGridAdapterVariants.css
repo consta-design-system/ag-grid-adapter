@@ -1,0 +1,8 @@
+.AgGridAdapterVariants {
+  width: 100%;
+  height: 100vh;
+
+  & .AgGridAdapter {
+    height: 100vh;
+  }
+}
