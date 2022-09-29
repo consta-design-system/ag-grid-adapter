@@ -1,0 +1,11 @@
+.LoadingCell {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-right: none;
+
+  & > *:not(:last-child) {
+    margin-right: var(--space-xs);
+  }
+}
