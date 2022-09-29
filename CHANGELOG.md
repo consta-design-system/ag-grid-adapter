@@ -1,5 +1,20 @@
 # Changelog
 
+## v1.0.0 (29/09/2022)
+Самое важное:
+Выкладываем новый стенд и сборщик.
+
+Добавили песочницу: теперь в ней можно смотреть примеры компонентов.
+
+⚠️ Внимание: библиотека работает только вместе с `@consta/uikit` версии `v4.0.1` или выше
+
+---
+
+- [chore(stand): new stand and new builder (#11)](https://github.com/consta-design-system/ag-grid-adapter/commit/3803c934c2a317b56202fa3e487da053e0f53aee) - [@gizeasy](https://github.com/gizeasy)
+- [docs(common): remove gpn links (#10)](https://github.com/consta-design-system/ag-grid-adapter/commit/adc793100a39539483246a4be64a827cec7cc8a4) - [@arhayka](https://github.com/arhayka)
+
+--------------------
+
 ## v0.1.1 (29/06/2022)
 Самое важное:
 - Доработали документацию и примеры использования
