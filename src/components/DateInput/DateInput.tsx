@@ -1,4 +1,4 @@
-import { DatePicker } from '@consta/uikit/DatePickerCanary';
+import { DatePicker } from '@consta/uikit/DatePicker';
 import { IDateParams } from 'ag-grid-community';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 
