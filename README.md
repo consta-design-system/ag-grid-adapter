@@ -1,63 +1,108 @@
-# [Дизайн-система Consta](http://consta.gazprom-neft.ru/) | Библиотека интерфейсных компонентов
+# [Дизайн-система Consta](https://consta.design/) | ag-grid-adapter
 
-Consta — дизайн-система для разработки интерфейсов, написана на [React](https://reactjs.org/), сделана и поддерживается в «Газпром нефти».
-
-В дизайн-систему входит несколько библиотек. **Здесь — библиотека интерфейсных компонентов:** простые контролы, сложные блоки, темы и хуки. Все библиотеки представлены в виде компонентов и макетов в Figma.
-
-## Что входит в дизайн-систему
-
-### Библиотека компонентов
-
-[Репозиторий](https://github.com/consta-design-system/uikit) | [NPM](https://www.npmjs.com/package/@consta/uikit) | [Документация и стенд](http://uikit.gizeasy.ru/?path=/story/common-about--page) | [Макеты](https://www.figma.com/community/file/853774806786762374)
-
-### Библиотека графиков
-
-[Репозиторий](https://github.com/consta-design-system/charts) | [NPM](https://www.npmjs.com/package/@consta/charts) | [Документация и стенд](http://charts.gizeasy.ru) | [Макеты](https://www.figma.com/community/file/982611119114314434)
-
-[>> Посмотреть все библиотеки](http://uikit.gizeasy.ru/?path=/docs/common-about-github--page)
-
-<hr>
-
-Подробности — на [на сайте дизайн-системы Consta](http://consta.gazprom-neft.ru/)
-
-Следите за новостями и релизами в [телеграм-канале дизайн-системы](https://t.me/consta_ui_releases)
+Этот адаптер стилизует таблицу [ag-grid-react](https://www.ag-grid.com/react-data-grid/getting-started/) для [дизайн-системы Consta](https://consta.design/).
 
 # Как использовать
 
 ## Установите пакет
 
-```
-yarn add @consta/uikit
-```
-
-## Начните работу с библиотекой
-
-Чтобы начать работу с библиотекой интерфейсных компонентов, подключите тему:
-
-```tsx
-import React from 'react';
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
-import { Button } from '@consta/uikit/Button';
-
-const App = () => (
-  <Theme preset={presetGpnDefault}>
-    <Button label="Кнопка" />
-  </Theme>
-);
+```sh
+# NPM
+$ npm install @consta/ag-grid-adapter
+# Yarn
+$ yarn add @consta/ag-grid-adapter
 ```
 
-[Что такое темы и как с ними работать](http://uikit.gizeasy.ru/?path=/docs/thematization-what-are-themes--page)
+## Подключите зависимости
 
-## Документация и стенд
+Чтобы начать работу, установите библиотеку [`@consta/uikit`](https://www.npmjs.com/package/@consta/uikit) и [настройте тему](http://uikit.consta.design/libs/uikit/theme-themeabout).
 
-На стенде можно менять параметры и смотреть, как меняются компоненты. Документация — во вкладке у каждого компонента.
+### Можно использовать компоненты
 
-[Вперёд, к стенду](http://uikit.gizeasy.ru/)
+Например, так:
+
+```js
+import React from 'react'
+import { agGridAdapter } from '@consta/ag-grid-adapter/agGridAdapter'
+import { AgGridReact } from 'ag-grid-react'
+const columnDefs = [
+  { field: 'athlete', filter: 'agTextColumnFilter', minWidth: 200 },
+  { field: 'age' },
+  { field: 'country', minWidth: 180 },
+  { field: 'year' },
+  { field: 'date', minWidth: 150 },
+  { field: 'gold' },
+  { field: 'silver' },
+  { field: 'bronze' },
+  { field: 'total' },
+]
+const defaultColDef = {
+  flex: 1,
+  minWidth: 100,
+  enableValue: true,
+  enableRowGroup: true,
+  enablePivot: true,
+  sortable: true,
+  filter: true,
+  resizable: true,
+}
+const App = () => {
+   const styleOptions = agGridAdapter({
+    size: 'm',
+    borderBetweenColumns: true,
+    borderBetweenRows: true,
+    headerVerticalAlign: 'center',
+    headerView: 'default',
+    verticalAlign: 'center',
+  })
+  return  (
+    <AgGridReact
+      {...styleOptions}
+      rowData={[...]}
+      columnDefs={columnDefs}
+      defaultColDef={defaultColDef}
+    />
+  )
+}
+```
+
+## Разработка
+
+### Подготовка окружения
+
+Рабочее окружение должно содержать NodeJS и Yarn, необходимые версии можно узнать в файле [package.json](./package.json) в блоке **engines**.
+
+Чтобы установить зависимости, выполните команду:
+
+```sh
+$ yarn install
+```
+
+### Основные команды
+
+```sh
+# Сборка и старт Storybook
+$ yarn start
+# Сборка для production
+$ yarn build
+# Линтинг всех файлов
+$ yarn lint
+# Форматирование всех файлов prettier
+$ yarn format
+# Запуск юнит-тестов
+$ yarn unit
+# Запуск юнит-тестов, тестирование TS, линтинг файлов
+$ yarn test
+```
+
+## Документация
+
+[Посмотреть документацию и примеры](http://ag-grid-adapter.consta.design/)
 
 ## Контрибьюторам
 
-Будем рады, если вы захотите принять участие в разработке дизайн-системы =) Но сначала прочитайте [инструкцию для контрибьюторов](http://uikit.gizeasy.ru/?path=/docs/common-develop-contributors--page).
+Будем рады, если вы захотите принять участие в разработке дизайн-системы =) Но сначала прочитайте [инструкцию для контрибьюторов](http://uikit.consta.design/libs/uikit/custom-contribute).
 
 ## Лицензия
 
-Дизайн-систему можно использовать бесплатно, она распространяется ПАО «Газпром нефть» на условиях открытой [лицензии MIT](https://consta.gazprom-neft.ru/static/licence_mit.pdf).
+Дизайн-систему можно использовать бесплатно, она распространяется на условиях открытой [лицензии MIT](https://consta.design/static/licence_mit.pdf).

@@ -6,10 +6,12 @@ const groups = [
   {
     title: 'Адаптеры',
     id: 'adapters',
+    initialOpen: true,
   },
   {
     title: 'Компоненты',
     id: 'components',
+    initialOpen: true,
   },
 ] as const;
 
