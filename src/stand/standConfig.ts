@@ -23,4 +23,5 @@ export const { createStand } = createConfig({
   image,
   description:
     'Адптер для библиотеки ag-grid-react. Стилизует таблицу для дизайн-системы Consta.',
+  repositoryUrl: 'https://github.com/consta-design-system/ag-grid-adapter',
 });
