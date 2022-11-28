@@ -1,4 +1,4 @@
-.AgGridAdapter {
+.aga--AgGridAdapter {
   /**
     =======================
       General
@@ -110,7 +110,7 @@
   }
 
   &_borderBetweenRows {
-    & .AgGridAdapter-Row .ag-cell,
+    & .aga--AgGridAdapter-Row .ag-cell,
     & .ag-header-row,
     & .ag-column-drop-wrapper {
       border-bottom: 1px solid var(--color-bg-border);
@@ -327,7 +327,7 @@
     =======================
     **/
 
-  & .ag-header-row & .AgGridAdapter-Row {
+  & .ag-header-row & .aga--AgGridAdapter-Row {
     box-sizing: border-box;
     min-height: var(--ag-row-height);
   }
@@ -341,7 +341,7 @@
     padding: calc(var(--space-xs) + var(--space-3xs)) var(--ag-cell-padding);
     border-bottom: 1px solid var(--color-bg-border);
 
-    &.AgGridAdapter-Row {
+    &.aga--AgGridAdapter-Row {
       background-color: var(--color-bg-stripe);
     }
   }
@@ -422,7 +422,7 @@
   }
 
   & .ag-header-row,
-  & .AgGridAdapter-Row {
+  & .aga--AgGridAdapter-Row {
     box-sizing: border-box;
   }
 
