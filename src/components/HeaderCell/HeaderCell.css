@@ -1,4 +1,4 @@
-.HeaderCell {
+.aga--HeaderCell {
   --header-cell-margin: var(--space-xs);
   --header-align: 'row';
   display: flex;
