@@ -514,8 +514,12 @@
   & .ag-floating-filter,
   & .ag-header-cell-label,
   & .ag-header-group-cell-label {
-    & > *:not(:last-child) {
+    & > * {
       margin-right: var(--space-s);
+    }
+
+    &:not([role='presentation']) > *:last-child {
+      margin-right: 0;
     }
   }
 
@@ -834,34 +838,8 @@
   }
 
   & .ag-sort {
-    &-ascending-icon {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-width: var(--space-m);
-      max-width: var(--space-m);
-      min-height: var(--space-m);
-      max-height: var(--space-m);
-      margin: 0;
-      padding: 0;
-      background: none;
-      border: none;
-      border-radius: var(--control-radius);
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      &:focus,
-      &:focus:hover {
-        outline: none;
-        box-shadow: 0 0 0 3px var(--color-control-bg-focus);
-        animation: Animation--MixFocus 0.5s ease-in;
-      }
-
-      &:hover {
-        background: var(--color-control-bg-clear-hover);
-      }
-    }
-
+    &-ascending-icon,
+    &-none-icon,
     &-descending-icon {
       display: inline-flex;
       justify-content: center;
@@ -1914,6 +1892,13 @@
     height: var(--space-s);
     background: var(--color-control-typo-ghost);
     mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuMTAzNTIgMy44MTA2NlYxMS4xMDM2SDUuMTAzNTJWMy44MTA3NEwyLjQ1NzExIDYuNDU3MTRMMS43NSA1Ljc1MDA0TDUuNjAzNTUgMS44OTY0OEw5LjQ1NzExIDUuNzUwMDRMOC43NSA2LjQ1NzE0TDYuMTAzNTIgMy44MTA2NloiIGZpbGw9IiMwMDIwMzMiIGZpbGwtb3BhY2l0eT0iMC42Ii8+Cjwvc3ZnPgo=');
+  }
+
+  & .ag-icon-none {
+    width: var(--space-s);
+    height: var(--space-s);
+    background: var(--color-control-typo-ghost);
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExIDNWNEwxIDRWM0gxMVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik04IDlWMTBIMVY5SDhaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNNSA3VjZIMVY3SDVaIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4KCg==');
   }
 
   & .ag-icon-desc {
