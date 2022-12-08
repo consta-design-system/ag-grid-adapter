@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.2 (08/12/2022)
+Самое важное:
+Исправили баг с DateInput в плавающих фильтрах, а также добавили иконку для сортируемых столбцов.
+
+⚠️ Внимание: эта версия библиотеки работает только вместе с `@consta/uikit` версии `v4.6.0` или выше
+
+---
+
+- [fix(adapter): fix unsort icon and datepicker in  filters](https://github.com/consta-design-system/ag-grid-adapter/commit/fd3d2d16958d1b20050df5589f7c6b4783f0bcd4) - [@N1MBER](https://github.com/N1MBER)
+
+--------------------
+
 ## v1.0.1 (30/11/2022)
 - [fix(prefix): add prefix for class names (#20)](https://github.com/consta-design-system/ag-grid-adapter/commit/80badab544ff240a3cfa17cd1b4774529bca0fdb) - [@N1MBER](https://github.com/N1MBER)
 - [docs(portal): readme, version, stand (#19)](https://github.com/consta-design-system/ag-grid-adapter/commit/c82286c4c5387d44247271c9d9c74aaae440baf6) - [@arhayka](https://github.com/arhayka)
