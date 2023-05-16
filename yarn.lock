@@ -1818,7 +1818,23 @@
     webpack-manifest-plugin "^5.0.0"
     workbox-webpack-plugin "^6.4.1"
 
-"@consta/uikit@^4.14.2", "@consta/uikit@^4.15.0":
+"@consta/uikit@^4.14.2":
+  version "4.17.1"
+  resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-4.17.1.tgz#1d72f1d251b34fd3cd9cc6df5268430debfca121"
+  integrity sha512-OkYo4fbuv638UEHedxwyNzFm7dLbBb1Gry+0D22kqADOdJxhGr38wa0xDl77Q6qyhB5FkKqgMMrl0foy4lPIeQ==
+  dependencies:
+    "@bem-react/classname" "^1.5.12"
+    "@bem-react/classnames" "^1.3.10"
+    "@consta/icons" "^0.1.1"
+    compute-scroll-into-view "^1.0.17"
+    date-fns "^2.29.1"
+    focus-trap-react "8.7.0"
+    imask "^6.4.3"
+    react-dropzone "11.3.4"
+    react-textarea-autosize "^8.3.4"
+    react-transition-group "^4.4.5"
+
+"@consta/uikit@^4.15.0":
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/@consta/uikit/-/uikit-4.15.0.tgz#a40becc818b00ee396947b6d61b6a029b1ce4427"
   integrity sha512-uAmcUnWCgOewg8Zu6/f+hp4OU2b2Fxg9upH/2h31GRnDiSmwOc60v/X+QbfW6toY4cNad3t6UAGFG6XLendg1w==
@@ -3658,20 +3674,20 @@ adjust-sourcemap-loader@^4.0.0:
     loader-utils "^2.0.0"
     regex-parser "^2.2.11"
 
-ag-grid-community@^27.1.0:
-  version "27.3.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-27.3.0.tgz#b1e94a58026aaf2f0cd7920e35833325b5e762c7"
-  integrity sha512-R5oZMXEHXnOLrmhn91J8lR0bv6IAnRcU6maO+wKLMJxffRWaAYFAuw1jt7bdmcKCv8c65F6LEBx4ykSOALa9vA==
+ag-grid-community@^29.3.5:
+  version "29.3.5"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-29.3.5.tgz#16897896d10fa3ecac79279aad50d3aaa17c5f33"
+  integrity sha512-LxUo21f2/CH31ACEs1C7Q/ggGGI1fQPSTB4aY5OThmM+lBkygZ7QszBE8jpfgWOIjvjdtcdIeQbmbjkHeMsA7A==
 
-ag-grid-enterprise@^27.1.0:
-  version "27.3.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-27.3.0.tgz#f2a34599e3b496aab1ae9d4b4a125f05f3ca3da1"
-  integrity sha512-l95eH5cT1D/iOf0ROEpQ8G7RINg2UQ4E1rve4OGveN33Cg0/FFAyja0sraJ4DKgwLBPbPXtFksKq4nSlw0CEeA==
+ag-grid-enterprise@^29.3.5:
+  version "29.3.5"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-29.3.5.tgz#f99aa164cf589a2adb535fb652f4a8a1517f510d"
+  integrity sha512-5CVdcuD1uZWjAN7R/laFyiGZ9/DjdYUqERBGtMHMJiVwotp6TUiPryrHYxs29LvGlM4/0tNzEZ/OxtD3OYA6sg==
 
-ag-grid-react@^27.1.0:
-  version "27.3.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-27.3.0.tgz#fe06647653f8b0b349b8e613aab8ea2e07915562"
-  integrity sha512-2bs9YfJ/shvBZQLLjny4NFvht+ic6VtpTPO0r3bHHOhlL3Fjx2rGvS6AHSwfvu+kJacHCta30PjaEbX8T3UDyw==
+ag-grid-react@^29.3.5:
+  version "29.3.5"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-29.3.5.tgz#0eae8934d372c7751e98789542fc663aee0ad6ad"
+  integrity sha512-Eg0GJ8hEBuxdVaN5g+qITOzhw0MGL9avL0Oaajr+p7QRtq2pIFHLZSknWsCBzUTjidiu75WZMKwlZjtGEuafdQ==
   dependencies:
     prop-types "^15.8.1"
 

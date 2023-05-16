@@ -30,7 +30,6 @@ export const TableEditorNumber = memo(
   forwardRef((props: Props, ref) => {
     const {
       size = 'm',
-      key,
       eventKey,
       value: valueProp,
       charPress,
