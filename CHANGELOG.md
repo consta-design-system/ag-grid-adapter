@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.0.3 (23/05/2023)
+Запускать локальный сервер разработки и сборку пакетов теперь можно и на ОС Windows. 
+
+---
+
+- [chore: configure build for windows (#24)](https://github.com/consta-design-system/ag-grid-adapter/commit/0b6660ce0c15e09aeb6e5f4935feaba7877aaf6d) - [@gizeasy](https://github.com/gizeasy)
+- [docs(ag-grid-adapter): add aliases (#22)](https://github.com/consta-design-system/ag-grid-adapter/commit/89680304a4540a7f3a04aa16eb481ffc5fb5a8b1) - [@N1MBER](https://github.com/N1MBER)
+- [chore: update @consta/stand](https://github.com/consta-design-system/ag-grid-adapter/commit/c22acd9ef318d408589e9ea843f1f5f665fd0ce6) - [@gizeasy](https://github.com/gizeasy)
+
+--------------------
+
 ## v1.0.2 (08/12/2022)
 Самое важное:
 Исправили баг с DateInput в плавающих фильтрах, а также добавили иконку для сортируемых столбцов.
