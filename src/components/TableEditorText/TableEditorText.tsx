@@ -32,6 +32,7 @@ export const TableEditorText = memo(
       size = 'm',
       eventKey,
       value: valueProp,
+      key,
       charPress,
       onKeyDown: onKeyDownProp,
       className,
