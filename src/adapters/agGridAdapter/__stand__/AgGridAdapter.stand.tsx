@@ -9,6 +9,6 @@ export default createStand({
   alias: ['адаптер', 'таблица', 'столбцы', 'столбец', 'строка', 'строки'],
   sandbox: 'aggridadapter-4bufgz',
   figma:
-    'https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FLKYyjgQ3khFHvXraZAG1n1%2FConsta-Components%3Fnode-id%3D404%253A29189',
+    'https://www.figma.com/file/3RsiLTgTuXpdnqG7gW8UwL/Consta-Components-(Community)?type=design&node-id=404-29189&t=ponDmJar7RUOypIn-0',
   status: 'stable',
 });

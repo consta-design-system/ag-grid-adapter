@@ -25,5 +25,5 @@ export const { createStand } = createConfig({
     'Адптер для библиотеки ag-grid-react. Стилизует таблицу для дизайн-системы Consta.',
   repositoryUrl: 'https://github.com/consta-design-system/ag-grid-adapter',
   figmaUrl:
-    'https://www.figma.com/file/LKYyjgQ3khFHvXraZAG1n1?embed_host=share&kind=&node-id=404%3A29189&viewer=1',
+    'https://www.figma.com/file/3RsiLTgTuXpdnqG7gW8UwL/Consta-Components-(Community)?type=design&node-id=404-29189&t=ponDmJar7RUOypIn-0',
 });
