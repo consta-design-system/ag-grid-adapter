@@ -1,5 +1,7 @@
 import './AgGridAdapter.css';
-import './AgGridAdapterGrid.css';
+// import './AgGridAdapterGrid.css';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/agGridAlpineFont.css';
 
 import { cn } from '../../utils/bem';
 import { AgGridAdapterProps } from './helper';

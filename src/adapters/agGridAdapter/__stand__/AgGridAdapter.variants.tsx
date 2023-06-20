@@ -7,13 +7,46 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { cn } from '##/utils/bem';
 
-import { columnDefs, defaultColDef } from '../__mocks__/mock.data';
+import {
+  columnSpanning,
+  defaultOptions,
+  filterHeader,
+  groups,
+  headerGroup,
+  Item,
+  rowSpanning,
+  stickyColumn,
+} from '../__mocks__/mock.data';
 import { agGridAdapter } from '../agGridAdapter';
 
 const cnAgGridAdapterVariants = cn('AgGridAdapterVariants');
 
+const examplesMap = {
+  'По умолчанию': defaultOptions,
+  'С фильтром в загаловке': filterHeader,
+  'Закрепленная колонка': stickyColumn,
+  'С группировкой колонок': headerGroup,
+  'С вложенными заголовками': groups,
+  'Со строкой в несколько колонок': columnSpanning,
+  'С колонкой в несколько строк': rowSpanning,
+};
+
 const Variants = () => {
   const size = useSelect('size', ['m', 's'], 'm');
+  const type =
+    useSelect(
+      'type',
+      [
+        'По умолчанию',
+        'С фильтром в загаловке',
+        'С группировкой колонок',
+        'Закрепленная колонка',
+        'С вложенными заголовками',
+        'Со строкой в несколько колонок',
+        'С колонкой в несколько строк',
+      ],
+      'По умолчанию',
+    ) ?? 'По умолчанию';
   const zebraStriped = useSelect('zebraStriped', ['odd', 'even', ''], '');
   const borderBetweenColumns = useBoolean('borderBetweenColumns', true);
   const borderBetweenRows = useBoolean('borderBetweenRows', true);
@@ -28,11 +61,12 @@ const Variants = () => {
     ['top', 'center', 'bottom'],
     'center',
   );
-  const withPaginatiion = useBoolean('withPaginatiion', false);
+  const withPaginatiion = useBoolean('withPaginatiion');
   const withSidebar = useBoolean('withSidebar', true);
+  const withStatusBar = useBoolean('withStatusBar');
 
   const gridRef = useRef(null);
-  const [rowData, setRowData] = useState();
+  const [rowData, setRowData] = useState<Item[]>([]);
 
   useEffect(() => {
     fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
@@ -51,15 +85,32 @@ const Variants = () => {
   });
 
   return (
-    <div className={cnAgGridAdapterVariants()}>
+    <div
+      className={cnAgGridAdapterVariants()}
+      key={cnAgGridAdapterVariants({ type, withStatusBar })}
+    >
       <AgGridReact
         {...styleOptions}
         rowData={rowData}
         ref={gridRef}
         pagination={withPaginatiion}
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
         sideBar={withSidebar}
+        {...examplesMap[type]}
+        statusBar={
+          withStatusBar
+            ? {
+                statusPanels: [
+                  {
+                    key: 'agAggregationComponent',
+                    statusPanel: 'agAggregationComponent',
+                    statusPanelParams: {
+                      aggFuncs: ['count', 'sum', 'min', 'max', 'avg'],
+                    },
+                  },
+                ],
+              }
+            : undefined
+        }
       />
     </div>
   );
