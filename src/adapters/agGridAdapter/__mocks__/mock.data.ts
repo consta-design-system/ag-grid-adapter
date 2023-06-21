@@ -1,4 +1,4 @@
-import { GridOptions } from 'ag-grid-community';
+import { GridOptions, RowSpanParams } from 'ag-grid-community';
 
 export type Item = {
   athlete: string;
@@ -13,7 +13,7 @@ export type Item = {
   total: number;
 };
 
-export const defaultOptions: GridOptions = {
+export const defaultOptions: GridOptions<Item> = {
   columnDefs: [
     {
       field: 'athlete',
@@ -58,7 +58,7 @@ export const defaultOptions: GridOptions = {
   },
 };
 
-export const filterHeader: GridOptions = {
+export const filterHeader: GridOptions<Item> = {
   columnDefs: [
     { field: 'athlete' },
     { field: 'sport' },
@@ -118,7 +118,7 @@ export const filterHeader: GridOptions = {
   },
 };
 
-export const headerGroup: GridOptions = {
+export const headerGroup: GridOptions<Item> = {
   columnDefs: [
     { field: 'athlete' },
     { field: 'age' },
@@ -146,7 +146,7 @@ export const headerGroup: GridOptions = {
   pivotPanelShow: 'always',
 };
 
-export const stickyColumn: GridOptions = {
+export const stickyColumn: GridOptions<Item> = {
   columnDefs: [
     {
       headerName: 'Athlete Details',
@@ -176,7 +176,7 @@ export const stickyColumn: GridOptions = {
   },
 };
 
-export const groups: GridOptions = {
+export const groups: GridOptions<Item> = {
   columnDefs: [
     {
       headerName: 'Group A',
@@ -309,14 +309,14 @@ export const groups: GridOptions = {
   },
 };
 
-export const columnSpanning: GridOptions = {
+export const columnSpanning: GridOptions<Item> = {
   columnDefs: [
     { field: 'athlete', pinned: 'left' },
     { field: 'age', pinned: 'left' },
     {
       field: 'country',
-      colSpan: (params) => {
-        const { country } = params.data;
+      colSpan: (params: RowSpanParams<Item>) => {
+        const country = params.data ? params.data.country : undefined;
         if (country === 'Russia') {
           return 2;
         }
@@ -340,11 +340,11 @@ export const columnSpanning: GridOptions = {
   },
 };
 
-export const rowSpanning: GridOptions = {
+export const rowSpanning: GridOptions<Item> = {
   columnDefs: [
     {
       field: 'athlete',
-      rowSpan: (params) => {
+      rowSpan: (params: RowSpanParams<Item>) => {
         const athlete = params.data ? params.data.athlete : undefined;
         if (athlete === 'Aleksey Nemov') {
           return 2;

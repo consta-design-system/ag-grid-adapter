@@ -1,5 +1,5 @@
-import 'ag-grid-enterprise';
 import './AgGridAdapterVariants.css';
+import 'ag-grid-enterprise';
 
 import { useBoolean, useSelect } from '@consta/stand';
 import { AgGridReact } from 'ag-grid-react';
@@ -64,8 +64,11 @@ const Variants = () => {
   const withPaginatiion = useBoolean('withPaginatiion');
   const withSidebar = useBoolean('withSidebar', true);
   const withStatusBar = useBoolean('withStatusBar');
+  const noRowsOverlay = useBoolean('noRowsOverlay');
+  const loadingOverlay = useBoolean('loadingOverlay');
 
-  const gridRef = useRef(null);
+  const gridRef: React.MutableRefObject<AgGridReact<Item> | null> =
+    useRef(null);
   const [rowData, setRowData] = useState<Item[]>([]);
 
   useEffect(() => {
@@ -73,6 +76,18 @@ const Variants = () => {
       .then((resp) => resp.json())
       .then((data) => setRowData(data));
   }, []);
+
+  useEffect(() => {
+    gridRef.current?.api?.[
+      noRowsOverlay ? 'showNoRowsOverlay' : 'hideOverlay'
+    ]();
+  }, [noRowsOverlay]);
+
+  useEffect(() => {
+    gridRef.current?.api?.[
+      loadingOverlay ? 'showLoadingOverlay' : 'hideOverlay'
+    ]();
+  }, [loadingOverlay]);
 
   const styleOptions = agGridAdapter({
     size,
@@ -87,7 +102,7 @@ const Variants = () => {
   return (
     <div
       className={cnAgGridAdapterVariants()}
-      key={cnAgGridAdapterVariants({ type, withStatusBar })}
+      key={cnAgGridAdapterVariants({ withStatusBar, type })}
     >
       <AgGridReact
         {...styleOptions}
@@ -103,6 +118,7 @@ const Variants = () => {
                   {
                     key: 'agAggregationComponent',
                     statusPanel: 'agAggregationComponent',
+                    align: 'left',
                     statusPanelParams: {
                       aggFuncs: ['count', 'sum', 'min', 'max', 'avg'],
                     },
