@@ -58,6 +58,8 @@ export const defaultOptions: GridOptions<Item> = {
   },
 };
 
+export const a = 'a';
+
 export const filterHeader: GridOptions<Item> = {
   columnDefs: [
     { field: 'athlete' },
