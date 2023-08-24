@@ -23,7 +23,7 @@ const cnAgGridAdapterVariants = cn('AgGridAdapterVariants');
 
 const examplesMap = {
   'По умолчанию': defaultOptions,
-  'С фильтром в загаловке': filterHeader,
+  'С фильтром в заголовке': filterHeader,
   'Закрепленная колонка': stickyColumn,
   'С группировкой колонок': headerGroup,
   'С вложенными заголовками': groups,
@@ -38,7 +38,7 @@ const Variants = () => {
       'type',
       [
         'По умолчанию',
-        'С фильтром в загаловке',
+        'С фильтром в заголовке',
         'С группировкой колонок',
         'Закрепленная колонка',
         'С вложенными заголовками',

@@ -147,6 +147,7 @@
   /* TOGGLE */
   --ag-toggle-button-height: var(--space-m);
   --ag-toggle-button-width: calc(var(--space-xl) + var(--space-2xs));
+  --ag-toggle-button-font-size: var(--size-text-xs);
 
   /* SELECT */
   --ag-select-horizontal-space: calc(var(--control-space-s) * 0.5);
@@ -189,6 +190,9 @@
       --ag-input-padding: var(--space-xs);
       --ag-sidebar-font-size: var(--size-text-s);
       --ag-list-item-font-size: var(--size-text-s);
+      --ag-toggle-button-height: var(--space-l);
+      --ag-toggle-button-width: calc(var(--space-xl) + var(--space-s));
+      --ag-toggle-button-font-size: var(--size-text-s);
     }
 
     &_s {
@@ -217,6 +221,9 @@
       --ag-input-height: var(--space-xl);
       --ag-sidebar-font-size: var(--size-text-xs);
       --ag-list-item-font-size: var(--size-text-xs);
+      --ag-toggle-button-height: var(--space-m);
+      --ag-toggle-button-width: calc(var(--space-xl) + var(--space-2xs));
+      --ag-toggle-button-font-size: var(--size-text-xs);
     }
   }
 
@@ -399,6 +406,11 @@
       Cell
     =======================
     **/
+
+  & .ag-cell,
+  & .ag-full-width-row .ag-cell-wrapper.ag-row-group {
+    border: none;
+  }
 
   & .ag-cell {
     position: absolute;
@@ -1179,6 +1191,23 @@
       }
     }
 
+    &-button {
+      &,
+      & > * {
+        cursor: pointer;
+      }
+    }
+
+    &-page {
+      &-summary {
+        &-panel {
+          & > *:not(:last-child) {
+            margin-right: var(--space-2xs);
+          }
+        }
+      }
+    }
+
     &-panel {
       --ag-header-height: calc(var(--space-3xl) + var(--space-2xs));
       display: flex;
@@ -1247,6 +1276,15 @@
         --ag-input-border-color: var(--color-control-bg-border-default-hover);
       }
 
+      &:not([value]) {
+        &[type='date']::-webkit-datetime-edit-text,
+        &[type='date']::-webkit-datetime-edit-month-field,
+        &[type='date']::-webkit-datetime-edit-day-field,
+        &[type='date']::-webkit-datetime-edit-year-field {
+          color: var(--color-control-typo-placeholder);
+        }
+      }
+
       &::placeholder {
         color: var(--color-control-typo-placeholder);
       }
@@ -1276,7 +1314,7 @@
   & .ag-toggle-button {
     &-label {
       color: var(--color-control-typo-default);
-      font-size: var(--size-text-s);
+      font-size: var(--ag-toggle-button-font-size);
       line-height: var(--line-height-text-xs);
     }
 
@@ -1315,7 +1353,13 @@
           }
 
           &::before {
-            left: calc(var(--space-s) + 1px);
+            left:
+              calc(
+                calc(
+                  var(--ag-toggle-button-width) - var(--ag-toggle-button-height) +
+                  1px
+                )
+              );
           }
         }
 
@@ -1323,8 +1367,8 @@
           content: '';
           position: absolute;
           left: 1px;
-          width: var(--space-s);
-          height: var(--space-s);
+          width: calc(var(--ag-toggle-button-height) - var(--space-2xs));
+          height: calc(var(--ag-toggle-button-height) - var(--space-2xs));
           background: var(--ag-toggle-button-point-color);
           border-radius: var(--space-xs);
           transition: left 0.3s, background-color 0.3s;
@@ -1383,7 +1427,7 @@
           position: absolute;
           z-index: 1;
           top: var(--ag-checkbox-arrow-top);
-          left: calc(calc(var(--ag-checkbox-size) - 6px) / 5);
+          left: calc(calc(var(--ag-checkbox-size) - 3px) / 5);
           box-sizing: border-box;
           width: calc(var(--ag-checkbox-size) * 0.6);
           height: calc(var(--ag-checkbox-size) * 0.35);
@@ -1450,8 +1494,10 @@
 
     &-input {
       &[type] {
-        width: var(--ag-checkbox-size);
-        height: var(--ag-checkbox-size);
+        min-width: var(--ag-checkbox-size);
+        max-width: var(--ag-checkbox-size);
+        min-height: var(--ag-checkbox-size);
+        max-height: var(--ag-checkbox-size);
         padding: 0;
         border: 1px solid var(--ag-radio-border-color);
         border-radius: 50%;
@@ -1536,7 +1582,8 @@
   & .ag-sort-ascending-icon,
   & .ag-sort-none-icon,
   & .ag-sort-descending-icon,
-  & .ag-header-cell-menu-button {
+  & .ag-header-cell-menu-button,
+  & .ag-paging-button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
