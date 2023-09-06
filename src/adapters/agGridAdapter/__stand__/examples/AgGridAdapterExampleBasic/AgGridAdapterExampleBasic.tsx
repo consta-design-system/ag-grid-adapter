@@ -8,7 +8,7 @@ const options: GridOptions = {
   rowData: [
     { user: 'Крокодил Гена', role: 'администратор', priority: '1' },
     { user: 'Чебурашка', role: 'читатель', priority: '2' },
-    { user: 'Шапокляк', role: 'вредитель', приорpriorityитет: '777' },
+    { user: 'Шапокляк', role: 'вредитель', priority: '777' },
   ],
   columnDefs: [
     { field: 'user', headerName: 'Пользователь' },
