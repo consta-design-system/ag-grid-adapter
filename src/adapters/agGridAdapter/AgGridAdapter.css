@@ -843,6 +843,10 @@
       gap: var(--space-m);
     }
 
+    &-no-matches {
+      color: var(--color-typo-secondary);
+    }
+
     &-apply {
       &-panel {
         display: flex;
@@ -1240,9 +1244,11 @@
     }
 
     &-input {
+      --ag-background-color: var(--color-bg-default);
       --ag-input-border-color: var(--color-control-bg-border-default);
       height: var(--ag-input-height);
       padding: 0 var(--ag-input-padding);
+      background: transparent;
       border-radius: var(--control-radius);
       transition: border 0.3s;
 
@@ -1293,6 +1299,8 @@
 
   & .ag-picker {
     &-field {
+      --ag-background-color: var(--color-bg-default);
+
       &-display {
         margin: 0;
         color: var(--color-control-typo-default);
@@ -1615,6 +1623,7 @@
 
   & .ag-select {
     &-list {
+      --ag-background-color: var(--color-bg-default);
       margin-top: var(--space-2xs);
     }
 
