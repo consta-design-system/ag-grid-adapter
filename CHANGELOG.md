@@ -1,5 +1,18 @@
 # Changelog
 
+## v2.0.0 (27/09/2023)
+Мажорное обновление
+
+- Адаптер теперь работает с ag-grid 30.0.0 и выше.
+
+---
+
+- [fix(AgGridAdapter): rewrite styles, tools and components (#26)](https://github.com/consta-design-system/ag-grid-adapter/commit/867f19e346b7272bcb47c83a0a72e44b0fabb995) - [@N1MBER](https://github.com/N1MBER)
+- [chore: edit deploy config and codeowners (#27)](https://github.com/consta-design-system/ag-grid-adapter/commit/87c560a8a22aac370c6d2476baeb67096b266275) - [@gizeasy](https://github.com/gizeasy)
+- [docs(standConfig): add figmaUrl (#25)](https://github.com/consta-design-system/ag-grid-adapter/commit/62e167a2b23514c479a17ddb0d13a970e2469e80) - [@gizeasy](https://github.com/gizeasy)
+
+--------------------
+
 ## v1.0.3 (23/05/2023)
 Запускать локальный сервер разработки и сборку пакетов теперь можно и на ОС Windows. 
 
