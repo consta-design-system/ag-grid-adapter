@@ -25,6 +25,7 @@ module.exports = {
         ignoreAtRules: ['define-mixin', 'mixin'],
       },
     ],
+    'font-family-no-missing-generic-family-keyword': null,
     'order/properties-order': [
       {
         noEmptyLineBetween: true,

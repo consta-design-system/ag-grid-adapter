@@ -30,10 +30,8 @@ export const TableEditorNumber = memo(
   forwardRef((props: Props, ref) => {
     const {
       size = 'm',
-      key,
       eventKey,
       value: valueProp,
-      charPress,
       onKeyDown: onKeyDownProp,
       className,
       ...otherProps
@@ -44,9 +42,6 @@ export const TableEditorNumber = memo(
 
       if (eventKey === 'Backspace' || eventKey === 'Delete') {
         startValue = '';
-      } else if (charPress) {
-        startValue = charPress;
-        highlightAllOnFocus = false;
       } else {
         startValue = valueProp;
         if (eventKey === 'F2') {
@@ -87,9 +82,6 @@ export const TableEditorNumber = memo(
       }
     }, []);
 
-    const cancelBeforeStart =
-      props.charPress && '1234567890'.indexOf(props.charPress) < 0;
-
     const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (event.key === 'Enter' || event.key === 'Tab') {
         props.stopEditing();
@@ -104,7 +96,7 @@ export const TableEditorNumber = memo(
         },
 
         isCancelBeforeStart() {
-          return cancelBeforeStart;
+          return false;
         },
       };
     });
