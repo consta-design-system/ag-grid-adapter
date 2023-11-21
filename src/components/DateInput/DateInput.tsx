@@ -42,7 +42,7 @@ export const DateInput = forwardRef((props: Props, ref) => {
     <DatePicker
       size={sizeMap[size]}
       value={date}
-      onChange={({ value }) => changeDate(value)}
+      onChange={changeDate}
       className={cnDateInput()}
       dropdownClassName={cnDateInput('Popover', ['ag-custom-component-popup'])}
     />

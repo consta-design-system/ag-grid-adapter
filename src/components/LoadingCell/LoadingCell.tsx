@@ -22,7 +22,7 @@ export const LoadingCell = (props: Props) => {
   return (
     <div className={cnLoadingCell()}>
       <ProgressSpin size={size} />
-      <Text size={size} view="secondary">
+      <Text size={size} view="secondary" lineHeight="m">
         {message}
       </Text>
     </div>

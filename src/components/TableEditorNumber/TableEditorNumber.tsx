@@ -109,7 +109,7 @@ export const TableEditorNumber = memo(
         type="number"
         size={sizeMap[size]}
         onKeyDown={onKeyDown}
-        onChange={(val) => setValue(val.value)}
+        onChange={setValue}
         {...otherProps}
       />
     );

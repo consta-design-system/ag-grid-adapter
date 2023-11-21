@@ -1,10 +1,10 @@
 import './HeaderCell.css';
 
-import { IconArrowLeft } from '@consta/uikit/IconArrowLeft';
-import { IconArrowRight } from '@consta/uikit/IconArrowRight';
-import { IconDown } from '@consta/uikit/IconDown';
-import { IconHamburger } from '@consta/uikit/IconHamburger';
-import { IconTop } from '@consta/uikit/IconTop';
+import { IconArrowLeft } from '@consta/icons/IconArrowLeft';
+import { IconArrowRight } from '@consta/icons/IconArrowRight';
+import { IconDown } from '@consta/icons/IconDown';
+import { IconHamburger } from '@consta/icons/IconHamburger';
+import { IconTop } from '@consta/icons/IconTop';
 import { Text, TextProps } from '@consta/uikit/Text';
 import { useFlag } from '@consta/uikit/useFlag';
 import { IHeaderGroupParams, IHeaderParams } from 'ag-grid-community';

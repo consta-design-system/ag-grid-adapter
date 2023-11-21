@@ -36,7 +36,7 @@ export const TooltipExample = () => {
     tooltipComponent: Tooltip,
     tooltipComponentParams: {
       children: (props: ITooltipParams) => (
-        <Text>
+        <Text lineHeight="m" size="m" view="primary">
           Имя: {props.data.athlete}, возраст: {props.data.age}
         </Text>
       ),

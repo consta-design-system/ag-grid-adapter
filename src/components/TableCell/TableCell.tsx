@@ -1,6 +1,6 @@
 import './TableCell.css';
 
-import { IconProps } from '@consta/uikit/Icon';
+import { IconProps } from '@consta/icons/Icon';
 import { Text, TextProps } from '@consta/uikit/Text';
 import { ICellRendererParams } from 'ag-grid-community';
 import React from 'react';
@@ -38,7 +38,7 @@ export const TableCell = (props: Props) => {
   return (
     <div className={cnTableCell({ align })}>
       {Icon && <Icon view="secondary" size="s" />}
-      <Text {...otherProps} size={sizeMap[size]} align={align}>
+      <Text {...otherProps} size={sizeMap[size]} align={align} lineHeight="m">
         {valueFormatted ?? formatValue?.(value) ?? value}
       </Text>
       {children}

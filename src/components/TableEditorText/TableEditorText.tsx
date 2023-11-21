@@ -2,6 +2,7 @@ import './TableEditorText.css';
 
 import { TextField, TextFieldProps } from '@consta/uikit/TextField';
 import { useFlag } from '@consta/uikit/useFlag';
+import { useForkRef } from '@consta/uikit/useForkRef';
 import { ICellEditorParams } from 'ag-grid-community';
 import React, {
   forwardRef,
@@ -17,7 +18,7 @@ import { cn } from '##/utils/bem';
 const cnTableEditorText = cn('TableEditorText');
 
 type Props = ICellEditorParams &
-  TextFieldProps<'text' | 'textarea'> & {
+  (TextFieldProps<'text'> | TextFieldProps<'textarea'>) & {
     size?: 's' | 'm';
   };
 
@@ -34,6 +35,7 @@ export const TableEditorText = memo(
       value: valueProp,
       onKeyDown: onKeyDownProp,
       className,
+      inputRef: inputRefProp,
       ...otherProps
     } = props;
     const createInitialState = () => {
@@ -103,11 +105,14 @@ export const TableEditorText = memo(
     return (
       <TextField
         className={cnTableEditorText(null, [className])}
-        inputRef={inputRef}
+        inputRef={useForkRef([
+          inputRef,
+          inputRefProp as React.RefObject<HTMLInputElement>,
+        ])}
         value={value}
         size={sizeMap[size]}
         onKeyDown={onKeyDown}
-        onChange={(val) => setValue(val.value)}
+        onChange={setValue}
         {...otherProps}
       />
     );
