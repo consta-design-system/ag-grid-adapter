@@ -1,4 +1,4 @@
-import { IconCrown } from '@consta/uikit/IconCrown';
+import { IconCrown } from '@consta/icons/IconCrown';
 import { ICellRendererParams } from 'ag-grid-community';
 import { AgGridReact } from 'ag-grid-react';
 import React, { useEffect, useState } from 'react';

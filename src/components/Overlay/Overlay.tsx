@@ -1,6 +1,6 @@
 import './Overlay.css';
 
-import { IconProps } from '@consta/uikit/Icon';
+import { IconProps } from '@consta/icons/Icon';
 import { Loader } from '@consta/uikit/Loader';
 import { Text } from '@consta/uikit/Text';
 import { ILoadingOverlayParams } from 'ag-grid-community';
@@ -41,7 +41,7 @@ export const Overlay = (props: Props) => {
         ) : (
           <>
             {Icon && <Icon size={sizeMap[size]} view="secondary" />}
-            <Text size="l" weight="semibold" view="secondary">
+            <Text size="l" weight="semibold" view="secondary" lineHeight="m">
               {message}
             </Text>
           </>

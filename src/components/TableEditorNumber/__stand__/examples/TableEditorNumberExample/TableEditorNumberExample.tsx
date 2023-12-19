@@ -1,4 +1,4 @@
-import { IconSettings } from '@consta/uikit/IconSettings';
+import { IconSettings } from '@consta/icons/IconSettings';
 import { GridOptions } from 'ag-grid-community';
 import { AgGridReact } from 'ag-grid-react';
 import React from 'react';

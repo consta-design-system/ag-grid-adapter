@@ -15,7 +15,7 @@ export const RemadeInfo: React.FC<{
   const { apiUrl } = props;
   return (
     <Informer className={cnRemadeInfo()} status="system" view="bordered">
-      <Text>
+      <Text lineHeight="m" size="m" view="primary">
         Это компонент из библиотеки{' '}
         <Text
           className={cnRemadeInfo('Link')}
@@ -38,7 +38,12 @@ export const RemadeInfo: React.FC<{
         </Text>
         .
       </Text>
-      <Text style={{ marginTop: 'var(--space-m)' }}>
+      <Text
+        style={{ marginTop: 'var(--space-m)' }}
+        lineHeight="m"
+        size="m"
+        view="primary"
+      >
         Здесь описаны только основные свойства, подробности — в{' '}
         <Text
           className={cnRemadeInfo('Link')}
@@ -59,7 +64,7 @@ export const RemadeTableInfo: React.FC<{ apiUrl: string }> = (props) => {
   const { apiUrl } = props;
   return (
     <Informer className={cnRemadeInfo()} status="system" view="bordered">
-      <Text>
+      <Text lineHeight="m" size="m" view="primary">
         Здесь описаны только основные свойства компонента.{' '}
         <Text
           className={cnRemadeInfo('Link')}
