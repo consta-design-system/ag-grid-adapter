@@ -1,5 +1,17 @@
 # Changelog
 
+## v3.0.0 (19/12/2023)
+Самое важное:
+- Сторонние зависимости перенесены в `peerDependencies`. Установить их вы сможете самостоятельно, полный список доступен [здесь](https://github.com/consta-design-system/ag-grid-adapter/blob/master/package.json) 
+- Добавлена поддержка `@consta/uikit` `v5.0.0`
+
+---
+
+- [chore: update uikit version (#29)](https://github.com/consta-design-system/ag-grid-adapter/commit/47c91a3c8e3b14d16cdcfdc858dfe2855e7a98be) - [@gizeasy](https://github.com/gizeasy)
+- [chore(utils): added status classNames (#28)](https://github.com/consta-design-system/ag-grid-adapter/commit/9181c956ff6195509b861d6e0231846c87d288ba) - [@N1MBER](https://github.com/N1MBER)
+
+--------------------
+
 ## v2.0.0 (27/09/2023)
 Мажорное обновление
 
