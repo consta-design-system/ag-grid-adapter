@@ -1,7 +1,0 @@
-.TooltipComponent {
-  box-sizing: border-box;
-  padding: var(--space-xs);
-  background: var(--color-bg-default);
-  border-radius: var(--control-radius);
-  box-shadow: var(--shadow-layer);
-}
