@@ -1,0 +1,73 @@
+import { ThemeMainExample } from './examples/ThemeMainExample/ThemeMainExample';
+
+import { ThemeOddExample } from './examples/ThemeOddExample/ThemeOddExample';
+
+import { MdxTabs } from '@consta/stand';
+
+Тема содержит переменные цветов и отступов а также набор иконок. Подробнее о [параметрах темы](https://www.ag-grid.com/react-data-grid/theming-parameters/).
+
+<MdxTabs>
+
+```tsx
+import { theme } from '@consta/ag-grid-adapter/theme';
+
+import {
+  AllCommunityModule,
+  ClientSideRowModelModule,
+  ModuleRegistry,
+} from 'ag-grid-community';
+
+import { AgGridReact } from 'ag-grid-react';
+
+const ThemeMainExample = () => {
+  const [rowData, setRowData] = useState<Item[]>([]);
+
+  useEffect(() => {
+    fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
+      .then((resp) => resp.json())
+      .then((data) => setRowData(data));
+  }, []);
+
+  return <AgGridReact {...otherOptions} rowData={rowData} theme={theme} />;
+};
+```
+
+<ThemeMainExample />
+
+</MdxTabs>
+
+Вы можете изменить тему в случае необходимости. К примеру изменим фон не четной строки:
+
+<MdxTabs>
+
+```tsx
+import { theme } from '@consta/ag-grid-adapter/theme';
+
+import {
+  AllCommunityModule,
+  ClientSideRowModelModule,
+  ModuleRegistry,
+} from 'ag-grid-community';
+
+import { AgGridReact } from 'ag-grid-react';
+
+const myTheme = theme.withParams({
+  oddRowBackgroundColor: 'var(--color-bg-stripe)',
+});
+
+const ThemeMainExample = () => {
+  const [rowData, setRowData] = useState<Item[]>([]);
+
+  useEffect(() => {
+    fetch('https://www.ag-grid.com/example-assets/olympic-winners.json')
+      .then((resp) => resp.json())
+      .then((data) => setRowData(data));
+  }, []);
+
+  return <AgGridReact {...otherOptions} rowData={rowData} theme={myTheme} />;
+};
+```
+
+<ThemeOddExample />
+
+</MdxTabs>
