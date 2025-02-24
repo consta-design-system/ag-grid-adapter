@@ -1,5 +1,14 @@
 # Changelog
 
+## v4.0.0 (24/02/2025)
+Обновлен адаптер для поддержки `ag-grid ^33`. Теперь адаптер содержит тему, которая использует [`theme API`](https://www.ag-grid.com/react-data-grid/theming/), что гарантирует лучшую поддержку при обновлении `ag-grid`.
+
+---
+
+- [feat(theme): add consta theme (#33)](https://github.com/consta-design-system/ag-grid-adapter/commit/55f3db3d9582f25535c06ac0bd709c12257a09e1) - [@gizeasy](https://github.com/gizeasy)
+
+--------------------
+
 ## v3.0.0 (19/12/2023)
 Самое важное:
 - Сторонние зависимости перенесены в `peerDependencies`. Установить их вы сможете самостоятельно, полный список доступен [здесь](https://github.com/consta-design-system/ag-grid-adapter/blob/master/package.json) 
